@@ -1,6 +1,7 @@
 {
     "name": "tinymce-custom-dropdown",
     "version": "1.0.0",
+    "homepage": "https://YuriyYurchenko-tech.github.io/TinyMCE",
     "description": "Приложение с TinyMCE и выпадающими списками",
     "main": "src/script.js",
     "scripts": {
