@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
@@ -11,7 +12,7 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
-      publicPath: '/'
+      publicPath: '/TinyMCE/'
     },
     compress: true,
     port: 9000,
@@ -29,7 +30,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html', 
+      filename: 'index.html',   
       inject: 'body' 
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: '' },
+      ],
+    }),
   ]
 };
